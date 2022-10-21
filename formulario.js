@@ -85,7 +85,7 @@ btnGuardar.addEventListener("click", (event) => {
 
     //VALIDACIÓN
 
-    let validacion = "";
+    var validacion = "";
     function validacion(contacto) {
         var campos_llenos = true;
         if (document.getElementsByClassName("nombre").value == "") {
@@ -101,7 +101,6 @@ btnGuardar.addEventListener("click", (event) => {
             campos_llenos = false;
         }
         
-        return validacion(campos_llenos = false)
     };
 
 })
