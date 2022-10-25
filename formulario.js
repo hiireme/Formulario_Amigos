@@ -78,32 +78,36 @@ btnGuardar.addEventListener("click", (event) => {
         correo: formulario["correo"].value,
         foto: formulario["foto"].value,
     };
-    amigos.push(contacto);
-    limpiar();
-    pintar();
+
     
-
-    //VALIDACIÓN
-
-    let validacion = "";
-    function validacion(contacto) {
-        let campos_llenos = true;
-        if (document.getElementsByClassName("nombre").value == "") {
-            campos_llenos = false;
-        }
-        if (document.getElementsByClassName("telefono").value == "") {
-            campos_llenos = false;
-        }
-        if (document.getElementsByClassName("correro").value == "") {
-            campos_llenos = false;
-        }
-        if (document.getElementsByClassName("foto").value == "") {
-            campos_llenos = false;
-        }
-
-        return campos
-
+    camposTexto = document.getElementById("formulario").elements;
+    if (camposTexto["nombre"].value == ''
+        && camposTexto["nombre"].type == 'text') {
+        alert("El campo " + camposTexto["nombre"].name + " está vacio y es OBLIGATORIO");
+        return false
     };
 
+    if (camposTexto["telefono"].value == ''
+        && camposTexto["telefono"].type == 'text') {
+        alert("El campo " + camposTexto["telefono"].name + " está vacio y es OBLIGATORIO");
+        return false
+    };
+
+    if (camposTexto["correo"].value == ''
+        && camposTexto["correo"].type == 'mail') {
+        alert("El campo " + camposTexto["correo"].name + " está vacio y es OBLIGATORIO");
+        return false
+    };
+
+    if (camposTexto["foto"].value == ''
+        && camposTexto["foto"].type == 'text') {
+        alert("El campo " + camposTexto["foto"].name + " está vacio y es OBLIGATORIO");
+        return false
+    };
+
+    amigos.push(contacto);
+    pintar();
     event.preventDefault();
-})
+    limpiar();
+
+});
