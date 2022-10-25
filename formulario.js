@@ -81,13 +81,13 @@ btnGuardar.addEventListener("click", (event) => {
     amigos.push(contacto);
     limpiar();
     pintar();
-    event.preventDefault();
+    
 
     //VALIDACIÓN
 
-    var validacion = "";
+    let validacion = "";
     function validacion(contacto) {
-        var campos_llenos = true;
+        let campos_llenos = true;
         if (document.getElementsByClassName("nombre").value == "") {
             campos_llenos = false;
         }
@@ -100,7 +100,10 @@ btnGuardar.addEventListener("click", (event) => {
         if (document.getElementsByClassName("foto").value == "") {
             campos_llenos = false;
         }
-        
+
+        return campos
+
     };
 
+    event.preventDefault();
 })
